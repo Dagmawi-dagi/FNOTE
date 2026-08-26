@@ -31,7 +31,7 @@ export const LiveTvModal: React.FC<LiveTvModalProps> = ({ isOpen, onClose }) => 
             </span>
             <div className="flex items-center gap-2">
               <Tv className="w-5 h-5 text-[#FFB000]" />
-              <span className="font-bold text-[#F5F5DC] tracking-wide">ZEMA LIVE TV • {t.nav.onAir}</span>
+              <span className="font-bold text-[#F5F5DC] tracking-wide font-serif">FNOTE TSIDK LIVE TV • {t.nav.onAir}</span>
             </div>
             <span className="hidden sm:inline-block px-2.5 py-0.5 text-xs font-bold bg-[#002816] text-[#FFCF9D] rounded-full border border-[#FFCF9D]/30">
               1080p HD

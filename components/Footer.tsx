@@ -7,24 +7,22 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
-  Sparkles, 
   MapPin, 
   Phone, 
   Mail, 
   Clock, 
-  Heart, 
   ExternalLink, 
   Radio, 
-  Tv, 
   Globe2 
 } from 'lucide-react';
-import { CATEGORIES, LOCATION_INFO } from '@/utils/constants';
+import { LOCATION_INFO } from '@/utils/constants';
 import { useLanguage } from '@/app/context/LanguageContext';
 import { LocationMap } from './LocationMap';
 
 export const Footer: React.FC = () => {
-  const { t, language } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <footer className="w-full bg-[#004225] border-t border-[#002816] text-[#F5F5DC]">
@@ -37,11 +35,11 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-4 h-4 text-[#FFB000]" />
                 <span>{t.ui.findUs}</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-black text-[#F5F5DC] tracking-tight">
-                Visit Our Central Studios & Offices in Addis Ababa
+              <h2 className="text-2xl sm:text-3xl font-black text-[#F5F5DC] tracking-tight font-serif">
+                Visit Fnote Tsidk Studios & Central Offices in Addis Ababa
               </h2>
               <p className="text-xs sm:text-sm text-[#FFCF9D] max-w-2xl">
-                Located in the heart of Kazanchis near UNECA, welcoming visitors, researchers, and partners for media production and sacred archive visits.
+                Located in the heart of Kazanchis near UNECA, welcoming visitors, researchers, clergy, and media partners for broadcast production and heritage preservation.
               </p>
             </div>
 
@@ -65,27 +63,33 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Mission */}
           <div className="lg:col-span-2 space-y-5">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-2xl bg-[#002816] border border-[#FFCF9D]/30 flex items-center justify-center text-[#FFB000] font-black shadow-md">
-                <Sparkles className="w-5 h-5" />
+              <div className="relative w-12 h-12 rounded-2xl overflow-hidden border-2 border-[#FFCF9D]/40 bg-[#FAF7EE] shadow-md shrink-0">
+                <Image
+                  src="/logo.png"
+                  alt="Fnote Tsidk Logo"
+                  width={48}
+                  height={48}
+                  className="object-cover w-full h-full"
+                />
               </div>
               <div className="flex flex-col">
-                <span className="text-xl font-black text-[#F5F5DC] tracking-tight">
-                  ZEMA <span className="text-[#FFCF9D]">MEDIA</span>
+                <span className="text-xl font-black text-[#F5F5DC] tracking-tight font-serif">
+                  FNOTE <span className="text-[#FFCF9D]">TSIDK</span>
                 </span>
                 <span className="text-[10px] font-bold text-[#FFCF9D]/80 uppercase tracking-wider">
-                  Spiritual & Heritage Portal
+                  ፍኖተ ጽድቅ • Spiritual Media
                 </span>
               </div>
             </Link>
 
             <p className="text-xs sm:text-sm text-[#F5F5DC]/85 leading-relaxed max-w-md">
-              Zema Spiritual Media is dedicated to broadcasting sacred Ethiopian Christian liturgical heritage, inter-religious dialogue for national peace, and authentic reporting from Addis Ababa and historical holy sites across Ethiopia.
+              Fnote Tsidk (ፍኖተ ጽድቅ) is dedicated to broadcasting sacred Ethiopian Christian liturgical heritage, inter-religious dialogue for peace, theological scholarship, and authentic spiritual dispatches from holy sites across Ethiopia.
             </p>
 
             <div className="flex items-center gap-3 text-xs text-[#F5F5DC]">
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#002816] border border-[#FFCF9D]/20">
                 <Globe2 className="w-3.5 h-3.5 text-[#FFB000]" />
-                <span>4 Languages Supported</span>
+                <span>4 Languages</span>
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#002816] border border-[#FFCF9D]/20">
                 <Radio className="w-3.5 h-3.5 text-[#FFB000]" />
@@ -94,50 +98,80 @@ export const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Col 2: Content Hubs */}
+          {/* Col 2: Navigation */}
           <div className="space-y-3">
-            <h3 className="text-xs font-black text-[#FFCF9D] uppercase tracking-wider">Categories</h3>
+            <h3 className="text-xs font-black text-[#FFCF9D] uppercase tracking-wider">Navigation</h3>
             <ul className="space-y-2 text-xs">
-              {CATEGORIES.map((cat) => (
-                <li key={cat}>
-                  <Link
-                    href={cat === 'Home' ? '/' : `/?category=${cat}`}
-                    className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors"
-                  >
-                    {t.categories[cat] || cat}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  {t.nav.home || 'Home'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  {t.nav.about || 'About Us'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  {t.nav.blog || 'Blog'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/events" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  {t.nav.events || 'Events'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/socials" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  {t.nav.socials || 'Socials'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/vacancy" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  {t.nav.vacancy || 'Vacancy'}
+                </Link>
+              </li>
+              <li>
+                <Link href="/newsletter" className="hover:text-[#FFCF9D] text-[#FFCF9D] font-bold transition-colors">
+                  Newsletter & Bulletins
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Col 3: Media & Broadcast */}
           <div className="space-y-3">
-            <h3 className="text-xs font-black text-[#FFCF9D] uppercase tracking-wider">Media & Broadcast</h3>
+            <h3 className="text-xs font-black text-[#FFCF9D] uppercase tracking-wider">Broadcast & Feeds</h3>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link href="/" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
-                  Live TV Stream
+                <Link href="/socials" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  Community Charity & Relief Work
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                <Link href="/blog" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
                   Liturgical Chants Audio
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
-                  Sacred Echoes Podcast
+                <Link href="/socials" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  Fnote Tsidk YouTube Live
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
-                  Ancient Ge'ez Manuscripts
+                <Link href="/socials" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  Telegram Audio & Bulletins
                 </Link>
               </li>
               <li>
-                <Link href="/" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
-                  Holy Synod Announcements
+                <Link href="/events" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  Feast Day Live Schedules
+                </Link>
+              </li>
+              <li>
+                <Link href="/vacancy" className="hover:text-[#FFCF9D] text-[#F5F5DC]/90 transition-colors">
+                  Career & Volunteer Openings
                 </Link>
               </li>
             </ul>
@@ -171,8 +205,9 @@ export const Footer: React.FC = () => {
       {/* 3. Bottom Bar */}
       <div className="border-t border-[#002816] bg-[#002816] px-4 sm:px-6 lg:px-8 py-5">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#FFCF9D]/80">
-          <p>© 2026 Zema Spiritual Media Association. All rights reserved.</p>
+          <p>© 2026 Fnote Tsidk (ፍኖተ ጽድቅ) Spiritual Media Association. All rights reserved.</p>
           <div className="flex items-center gap-6">
+            <Link href="/admin" className="text-[#FFCF9D] font-bold hover:text-[#F5F5DC] transition-colors">Admin Desk</Link>
             <Link href="/contact" className="hover:text-[#F5F5DC] transition-colors">Privacy Policy</Link>
             <Link href="/contact" className="hover:text-[#F5F5DC] transition-colors">Terms of Broadcast</Link>
             <Link href="/contact" className="hover:text-[#F5F5DC] transition-colors">Editorial Guidelines</Link>

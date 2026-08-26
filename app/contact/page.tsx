@@ -63,12 +63,12 @@ export default function ContactPage() {
             <span>{t.nav.contact} • Addis Ababa Central Bureau</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl md:text-5xl font-black text-[#F5F5DC] tracking-tight leading-tight">
-            Connect with <span className="text-[#FFCF9D]">Zema Spiritual Media</span>
+          <h1 className="text-3xl sm:text-5xl md:text-5xl font-black text-[#F5F5DC] tracking-tight leading-tight font-serif">
+            Connect with <span className="text-[#FFCF9D]">Fnote Tsidk Spiritual Media</span>
           </h1>
 
           <p className="max-w-2xl mx-auto text-sm sm:text-base text-[#F5F5DC]/85 leading-relaxed">
-            Have a story tip, broadcast inquiry, liturgical research request, or community peace initiative to share? Reach our editorial desk and studio teams in Addis Ababa.
+            Have a story tip, broadcast inquiry, liturgical research request, vacancy application, or community peace initiative to share? Reach our editorial desk and studio teams in Addis Ababa.
           </p>
         </div>
       </section>
@@ -155,7 +155,7 @@ export default function ContactPage() {
                   </div>
                   <h4 className="text-lg font-bold text-[#F5F5DC]">Message Received Successfully</h4>
                   <p className="text-xs text-[#FFCF9D] max-w-md mx-auto">
-                    Thank you for contacting Zema Spiritual Media. Your dispatch has been routed to our editorial and studio team.
+                    Thank you for contacting Fnote Tsidk Spiritual Media. Your dispatch has been routed to our editorial and studio team.
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}

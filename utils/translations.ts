@@ -8,7 +8,12 @@ import { Language, TranslationSchema } from './types';
 export const TRANSLATIONS: Record<Language, TranslationSchema> = {
   en: {
     nav: {
+      home: 'Home',
       about: 'About Us',
+      blog: 'Blog',
+      events: 'Events',
+      socials: 'Socials',
+      vacancy: 'Vacancy',
       contact: 'Contact',
       liveTv: 'Live TV',
       login: 'Login',
@@ -40,7 +45,12 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
   },
   am: {
     nav: {
+      home: 'መነሻ',
       about: 'ስለ እኛ',
+      blog: 'ብሎግ እና ጽሑፎች',
+      events: 'ክንውኖች',
+      socials: 'ማህበራዊ ሚዲያ',
+      vacancy: 'ክፍት የሥራ ቦታ',
       contact: 'እውቅያ',
       liveTv: 'ቀጥታ ስርጭት',
       login: 'ይግቡ',
@@ -72,7 +82,12 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
   },
   ti: {
     nav: {
+      home: 'መበገሲ',
       about: 'ብዛዕባና',
+      blog: 'ብሎግን ጽሑፋትን',
+      events: 'መደባት',
+      socials: 'ማሕበራዊ ሚድያ',
+      vacancy: 'ክፉት ስራሕ',
       contact: 'ርክብ',
       liveTv: 'ቀጥታ ስርጭት',
       login: 'ይእትዉ',
@@ -104,7 +119,12 @@ export const TRANSLATIONS: Record<Language, TranslationSchema> = {
   },
   or: {
     nav: {
+      home: 'Manatti',
       about: 'Waa\'ee Keenya',
+      blog: 'Bloogii',
+      events: 'Qophiiwwan',
+      socials: 'Miidiyaa Hawaasaa',
+      vacancy: 'Banaa Hojii',
       contact: 'Quunnamtii',
       liveTv: 'Live TV',
       login: 'Seeni',
