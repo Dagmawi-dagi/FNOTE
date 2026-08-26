@@ -21,9 +21,11 @@ import {
 import { MOCK_NEWS, CATEGORIES } from '@/utils/constants';
 import { NewsItem, Category } from '@/utils/types';
 import { useLanguage } from '@/app/context/LanguageContext';
+import { useData } from '@/app/context/DataContext';
 
 export const NewsGrid: React.FC = () => {
   const { language, t } = useLanguage();
+  const { articles } = useData();
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
   const [activeArticle, setActiveArticle] = useState<NewsItem | null>(null);
   const [bookmarkedIds, setBookmarkedIds] = useState<string[]>([]);
@@ -35,9 +37,11 @@ export const NewsGrid: React.FC = () => {
     );
   };
 
+  const displayList = articles.length > 0 ? articles : MOCK_NEWS;
+
   const filteredNews = selectedCategory === 'All'
-    ? MOCK_NEWS
-    : MOCK_NEWS.filter(n => n.category.toLowerCase() === selectedCategory.toLowerCase());
+    ? displayList
+    : displayList.filter(n => n.category.toLowerCase() === selectedCategory.toLowerCase());
 
   return (
     <div className="space-y-8">
@@ -208,13 +212,13 @@ export const NewsGrid: React.FC = () => {
               </p>
               <p>{activeArticle.content}</p>
               <p>
-                As spiritual broadcasts and community engagements continue to expand across Ethiopia and its global diaspora, Zema Spiritual Media remains dedicated to ethical reporting, sacred preservation, and inter-religious mutual understanding.
+                As spiritual broadcasts and community engagements continue to expand across Ethiopia and its global diaspora, Fnote Tsidk Spiritual Media remains dedicated to ethical reporting, sacred preservation, and inter-religious mutual understanding.
               </p>
             </div>
 
             {/* Footer */}
             <div className="pt-4 border-t border-[#004225]/20 flex items-center justify-between">
-              <span className="text-xs text-[#004225]/70">Published by Zema Editorial Board • Addis Ababa</span>
+              <span className="text-xs text-[#004225]/70">Published by Fnote Tsidk Editorial Board • Addis Ababa</span>
               <button
                 onClick={() => setActiveArticle(null)}
                 className="px-5 py-2.5 rounded-xl bg-[#004225] text-[#F5F5DC] font-bold text-xs hover:bg-[#005e35] transition-colors shadow-sm"

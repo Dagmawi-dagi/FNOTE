@@ -21,6 +21,7 @@ import { BreakingNews } from '@/components/BreakingNews';
 import { Hero } from '@/components/Hero';
 import { NewsGrid } from '@/components/NewsGrid';
 import { Sidebar } from '@/components/Sidebar';
+import { NewsletterSection } from '@/components/NewsletterSection';
 import { useLanguage } from '@/app/context/LanguageContext';
 import Link from 'next/link';
 
@@ -85,7 +86,10 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* 5. Multimedia Heritage Spotlight */}
+      {/* 5. Dedicated Portal Newsletter Subscription Section */}
+      <NewsletterSection />
+
+      {/* 6. Multimedia Heritage Spotlight */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         <div className="rounded-3xl bg-[#FAF7EE] border border-[#004225]/20 p-6 sm:p-8 space-y-6 shadow-md">
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#004225]/15 pb-4">

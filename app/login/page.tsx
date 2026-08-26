@@ -37,8 +37,8 @@ export default function LoginPage() {
       setLoading(false);
       setSuccess(true);
       setTimeout(() => {
-        router.push('/');
-      }, 1000);
+        router.push('/admin');
+      }, 600);
     }, 800);
   };
 
@@ -82,7 +82,7 @@ export default function LoginPage() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="editor@zemamedia.org"
+                  placeholder="editor@fnotetsidk.org"
                   className="w-full pl-10 pr-4 py-3 rounded-xl bg-[#F5F5DC] border border-[#004225]/20 text-xs text-[#004225] placeholder-[#004225]/50 focus:outline-none focus:border-[#004225]"
                 />
               </div>
@@ -123,14 +123,14 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-xl bg-[#004225] hover:bg-[#005e35] text-[#F5F5DC] font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-50"
+              className="w-full py-3.5 rounded-xl bg-[#004225] hover:bg-[#005e35] text-[#F5F5DC] font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
             >
               {loading ? (
                 <span>Authenticating...</span>
               ) : (
                 <>
                   <LogIn className="w-4 h-4 text-[#FFCF9D]" />
-                  <span>Sign In to Zema Desk</span>
+                  <span>Sign In to Fnote Tsidk Desk</span>
                 </>
               )}
             </button>
