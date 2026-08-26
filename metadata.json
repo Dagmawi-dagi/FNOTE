@@ -1,0 +1,6 @@
+{
+  "name": "Zema Spiritual Media",
+  "description": "A modern media portal for spiritual and religious content in Ethiopia, featuring live broadcasts, news, interactive location maps, and multimedia galleries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
